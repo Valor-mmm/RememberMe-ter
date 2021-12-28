@@ -1,0 +1,6 @@
+{
+  "meterPageHeadline": "Meters",
+  "@meterPageHeadline": {
+    "description": "Headline of the MeterPage"
+  }
+}
