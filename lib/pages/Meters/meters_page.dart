@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:untitled/common/app_bar.dart';
+import 'package:untitled/pages/CreateMeter/create_meter_page.dart';
 
 class MetersPage extends StatelessWidget {
   const MetersPage({Key? key}) : super(key: key);
@@ -7,10 +9,15 @@ class MetersPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: CustomAppBar(
         title: Text(AppLocalizations.of(context)!.meterPageHeadline),
-      )
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () => Navigator.push(context,
+            MaterialPageRoute(builder: (context) => const CreateMeterPage())),
+        label: Text(AppLocalizations.of(context)!.meterPageAddMeter),
+        icon: const Icon(Icons.add),
+      ),
     );
   }
-
 }

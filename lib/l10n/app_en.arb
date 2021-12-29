@@ -2,5 +2,46 @@
   "meterPageHeadline": "Meters",
   "@meterPageHeadline": {
     "description": "Headline of the MeterPage"
+  },
+  "meterPageAddMeter": "Add",
+  "@meterPageAddMeter": {
+    "description": "Label of the button to create a new meter"
+  },
+  "createMeterPageHeadline": "Add new meter",
+  "@createMeterPageHeadline": {
+    "description": "Headline of the CreateMeterPage"
+  },
+  "createMeterFormNameInput": "Name of the Meter",
+  "@createMeterFormNameInput": {
+    "description": "Placeholder/Label for the Name-Input in the CreateMeterForm"
+  },
+  "createMeterFormNameInputValidationEmpty": "Please add a name for the Meter.",
+  "@createMeterFormNameInputValidationEmpty": {
+    "description": "Validation message to show, if no input has been made for the meter name"
+  },
+  "createMeterFormUnitInput": "Please select a unit for the meter",
+  "@createMeterFormUnitInput": {
+    "description": "Placeholder/Label for the Unit-Input in the CreateMeterForm"
+  },
+  "createMeterFormUnitInputValidationEmpty": "You need to select a unit in order to create a meter.",
+  "@createMeterFormUnitInputValidationEmpty": {
+    "description": "Validation message to show, if not input has been made for the meter unit"
+  },
+
+  "unitCubicMeter": "m³",
+  "@unitCubicMeter": {
+    "description": "Unit for cubic meters"
+  },
+  "unitKWh": "kWh",
+  "@unitKWh": {
+    "description": "Unit for kWh"
+  },
+  "cancelAction": "Cancel",
+  "@cancelAction": {
+    "description": "Aborting an action"
+  },
+  "createAction": "Create",
+  "@createAction": {
+    "description": "Creating something"
   }
 }

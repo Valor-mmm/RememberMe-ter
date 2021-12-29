@@ -1,3 +1,15 @@
 {
-  "meterPageHeadline": "Zähler"
+  "meterPageHeadline": "Zähler",
+  "meterPageAddMeter": "Neu",
+  "createMeterPageHeadline": "Neuen Zähler hinzufügen",
+  "createMeterFormNameInput": "Name des Zählers",
+  "createMeterFormNameInputValidationEmpty": "Bitte fügen Sie einen Namen für den Zähler ein",
+  "createMeterFormUnitInput": "Einheit des Zählers",
+  "createMeterFormUnitInputValidationEmpty": "Bitte wählen sie eine Einhiet für den Zähler aus",
+
+  "unitCubicMeter": "m³",
+  "unitKWh": "kWh",
+
+  "cancelAction": "Abbrechen",
+  "createAction": "Erstellen"
 }
