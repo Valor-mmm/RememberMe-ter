@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:untitled/common/units.dart';
 import 'package:untitled/pages/CreateMeter/Form/crate_meter_form_data.dart';
+import 'package:untitled/persistence/meter/meter_model.dart';
+import 'package:untitled/persistence/meter/meter_service.dart';
 
 class CreateMeterForm extends StatefulWidget {
   const CreateMeterForm({Key? key}) : super(key: key);
@@ -13,6 +15,7 @@ class CreateMeterForm extends StatefulWidget {
 class _CreateMeterForm extends State<CreateMeterForm> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final CreateMeterFormData formData = CreateMeterFormData();
+  bool isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -68,14 +71,33 @@ class _CreateMeterForm extends State<CreateMeterForm> {
                                     .cancelAction))),
                         Flexible(
                             child: ElevatedButton(
-                                onPressed: () {
+                                onPressed: () async {
                                   if (_formKey.currentState!.validate()) {
                                     _formKey.currentState!.save();
-                                    print(formData);
+
+                                    if (formData.meterName != null &&
+                                        formData.meterUnit != null) {
+                                      setState(() {
+                                        isLoading = true;
+                                      });
+                                      final meterService =
+                                          await MeterService.initialize();
+                                      try {
+                                        await meterService.create(Meter(
+                                            name: formData.meterName as String,
+                                            unit: formData.meterUnit as Unit));
+                                      } catch (exception) {
+                                        print('Exception: $exception');
+                                      }
+                                      Navigator.pop(context);
+                                    }
                                   }
                                 },
                                 child: Text(AppLocalizations.of(context)!
-                                    .createAction)))
+                                    .createAction))),
+                        Visibility(
+                            child: const CircularProgressIndicator(),
+                            visible: isLoading)
                       ],
                     ))
               ],
